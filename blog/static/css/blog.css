@@ -1,0 +1,16 @@
+body {background-color: blue;}
+
+.page-header {
+    color: white;
+    margin-top: 0;
+    font-family: 'Lobster', cursive;
+}
+
+.row{
+    color: white;
+
+}
+
+table {
+  empty-cells: show;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <title>Tempest Fugit</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1 class="title">Tempest Fugit</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5" style="background-color:blue; font-size: medium">To Do List</div>
+                <div class="col-sm-2" style="background-color:blue; font-size: medium">April 2018</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" style="background-color:white;">
+                    <table class="table" style="color:black;">
+                        <tbody>
+                            <tr>
+                                <th>Walk Dog</th>
+                            </tr>
+                            <tr>
+                                <th>Cut hair</th>
+                            </tr>
+                            <tr><td><br/></td></tr>
+                            <tr><td><br/></td></tr>
+                            <tr><td><br/></td></tr>
+                            <tr><td><br/></td></tr>
+                            <tr><td><br/></td></tr>
+                            <tr><td><br/></td></tr>
+                            <tr><td><br/></td></tr>
+                            <tr><td><br/></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-8">
+                    <img src="{% static 'images/calendar.png' %}" class="Responsive image">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static 'images/mini-calendar.png' %}" class="Responsive image">
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
+
