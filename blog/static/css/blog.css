@@ -6,11 +6,6 @@ body {background-color: blue;}
     font-family: 'Lobster', cursive;
 }
 
-.row{
-    color: white;
-
-}
-
 table {
   empty-cells: show;
 }
