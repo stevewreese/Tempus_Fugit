@@ -52,15 +52,116 @@
 
         >
             var year = 2018
+            var month = "April"
             var calview = "Month"
             document.getElementById("left").onclick = function () {
-                year--
-                document.getElementById("year").innerHTML = "April " + year;
+                if(calview == "Month")
+                {
+                    if(month == "January"){
+                        month = "December"
+                        year --
+                    }
+                    else if(month == "February")
+                    {
+                        month = "January"
+                    }
+                    else if(month == "March")
+                    {
+                        month = "February"
+                    }
+                    else if(month == "April")
+                    {
+                        month = "March"
+                    }
+                    else if(month == "May")
+                    {
+                        month = "April"
+                    }
+                    else if(month == "June")
+                    {
+                        month = "May"
+                    }
+                    else if(month == "July")
+                    {
+                        month = "June"
+                    }
+                    else if(month == "August")
+                    {
+                        month = "July"
+                    }
+                    else if(month == "September")
+                    {
+                        month = "August"
+                    }
+                    else if(month == "October")
+                    {
+                        month = "September"
+                    }
+                    else if(month == "November")
+                    {
+                        month = "October"
+                    }
+                    else if(month == "December")
+                    {
+                        month = "November"
+                    }
+                }
+                document.getElementById("year").innerHTML = month + " " + year;
             };
 
             document.getElementById("right").onclick = function () {
-                year++
-                document.getElementById("year").innerHTML = "April " + year;
+                if(calview == "Month")
+                {
+                    if(month == "January"){
+                        month = "February"
+                    }
+                    else if(month == "February")
+                    {
+                        month = "March"
+                    }
+                    else if(month == "March")
+                    {
+                        month = "April"
+                    }
+                    else if(month == "April")
+                    {
+                        month = "May"
+                    }
+                    else if(month == "May")
+                    {
+                        month = "June"
+                    }
+                    else if(month == "June")
+                    {
+                        month = "July"
+                    }
+                    else if(month == "July")
+                    {
+                        month = "August"
+                    }
+                    else if(month == "August")
+                    {
+                        month = "September"
+                    }
+                    else if(month == "September")
+                    {
+                        month = "October"
+                    }
+                    else if(month == "October")
+                    {
+                        month = "November"
+                    }
+                    else if(month == "November")
+                    {
+                        month = "December"
+                    }
+                    else if(month == "December")
+                    {
+                        month = "January"
+                        year++
+                    }
+                }
+                document.getElementById("year").innerHTML = month + " " + year;
             };
 
             document.getElementById("view").onclick = function () {
@@ -83,6 +184,8 @@
                   calview = "Month"
                     document.getElementById("calView").src="images/calendar.png";
                 }
+                document.getElementById("view").style.color = "black"
+                document.getElementById("view").style.backgroundColor = "white"
 
             };
 
