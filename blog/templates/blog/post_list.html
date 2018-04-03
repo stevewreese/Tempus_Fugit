@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-{% load staticfiles %}
 <html>
     <head>
         <title>Tempest Fugit</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="blog.css">
         <!-- <script src="{% static 'scripts/TempusFugitScripts.js' %}"></script> -->
     </head>
     <body>
@@ -17,7 +16,7 @@
                 <div id = "left" class="col-sm-1"> <button type="button" style=" color:black; font-size: small"> < </button></div>
                 <div id = "year" class="col-sm-2" style="background-color:blue; font-size: medium">April 2018</div>
                 <div id = "right" class="col-sm-1"> <button type="button" style=" color:black; font-size: small"> > </button></div>
-                <div id = "view" class="col-sm-1"> <button type="button" style=" color:black; font-size: small">Year</button></div>
+                <div id = "view" class="col-sm-1"> <button type="button" style="background-color: white; color:black; font-size: small">Month</button></div>
             </div>
             <div class="row" style="color: white;">
                 <div class="col-md-3" style="background-color:white;">
@@ -41,18 +40,19 @@
                     </table>
                 </div>
                 <div class="col-md-8">
-                    <img src="{% static 'images/calendar.png' %}" class="Responsive image">
+                    <img id="calView" src="images/calendar.png" class="Responsive image">
                 </div>
              </div>
             </div>
         </div>
         <div style="left: 10px; top:550px; position: absolute;">
-            <img src="{% static 'images/mini-calendar.png' %}" class="Responsive image">
+            <img src="images/mini-calendar.png" class="Responsive image">
         </div>
         <script
 
         >
             var year = 2018
+            var calview = "Month"
             document.getElementById("left").onclick = function () {
                 year--
                 document.getElementById("year").innerHTML = "April " + year;
@@ -65,12 +65,23 @@
 
             document.getElementById("view").onclick = function () {
 
-                if(document.getElementById("view").innerHTML == "Year")
+                if(calview == "Month")
                 {
-                    document.getElementById("view").innerText = "Month";
+                    document.getElementById("view").innerText = "Week";
+                    calview = "Week"
+                    document.getElementById("calView").src="images/week.png";
                 }
-                else {
-                    document.getElementById("view").innerText = "Year";
+                else if(calview == "Week")
+                {
+                  document.getElementById("view").innerText = "Day";
+                  calview = "Day"
+                    document.getElementById("calView").src="images/day.png";
+                }
+                else if(calview == "Day")
+                {
+                  document.getElementById("view").innerText = "Month";
+                  calview = "Month"
+                    document.getElementById("calView").src="images/calendar.png";
                 }
 
             };
