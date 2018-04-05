@@ -11,33 +11,33 @@
         <h1 id="demo"></h1>
         <div style="left: 30px; position: absolute;">
             <div class="row" style="color: white;">
-                <div class="col-md-2" style="background-color:#3875d7; font-size: medium">To Do List</div>
-                <div class="col-sm-1"> <button type="button" style=" color:black; font-size: small">add to list</button></div>
-                <div id = "left" class="col-sm-1"> <button type="button" style=" color:black; font-size: small"> < </button></div>
-                <div id = "year" class="col-sm-2" style="background-color:#3875d7; font-size: medium">April 2018</div>
+                <div class="col-md-2" style="background-color:#75aed7; font-size: medium">To Do List</div>
+                <div class="col-sm-1"> <button type="button" style=" color:black; font-size: small" onclick="newRow()">add to list</button></div>
+                <div id = "left" class="col-sm-1"> <button type="button" style=" color:black; font-size: small" > < </button></div>
+                <div id = "year" class="col-sm-2" style="background-color:#75aed7; font-size: medium">April 2018</div>
                 <div id = "right" class="col-sm-1"> <button type="button" style=" color:black; font-size: small"> > </button></div>
                 <div id = "view" class="col-sm-1"> <button type="button" style="background-color: white; color:black; font-size: small">Month</button></div>
             </div>
             <div class="row" style="color: white;">
                 <div class="col-md-3" style="background-color:white; height: 380px; overflow: auto;">
-                    <table class="table table-striped" style="color:black;">
+                    <table id ="ToDoTable" class="table table-striped" style="color:black;">
                         <tbody>
-                            <tr>
+                            <tr id ="row0" onclick="clickRow(this)">
                                 <th>Walk Dog</th>
                             </tr>
-                            <tr>
+                            <tr id ="row1" onclick="clickRow(this)">
                                 <th>Cut hair</th>
                             </tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
-                            <tr><td><br/></td></tr>
+                            <tr id ="row2" onclick="clickRow(this)"><td><br/></td></tr>
+                            <tr id ="row3" onclick="clickRow(this)"><td><br/></td></tr>
+                            <tr id ="row4" onclick="clickRow(this)"><td><br/></td></tr>
+                            <tr id ="row5" onclick="clickRow(this)"><td><br/></td></tr>
+                            <tr id ="row6" onclick="clickRow(this)"><td><br/></td></tr>
+                            <tr id ="row7" onclick="clickRow(this)"><td><br/></td></tr>
+                            <tr id ="row8" onclick="clickRow(this)"><td><br/></td></tr>
+                            <tr id ="row9" onclick="clickRow(this)"><td><br/></td></tr>
+                            <!--<tr><td><br/></td></tr>
+                            <tr><td><br/></td></tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -53,9 +53,10 @@
         <script
 
         >
-            var year = 2018
-            var month = "April"
-            var calview = "Month"
+            var year = 2018;
+            var month = "April";
+            var calview = "Month";
+            var rowNum = 2;
             document.getElementById("left").onclick = function () {
                 if(calview == "Month")
                 {
@@ -190,6 +191,29 @@
                 document.getElementById("view").style.backgroundColor = "white"
 
             };
+
+            function clickRow(id)
+            {
+                alert(id.innerText);
+            }
+
+            function newRow()
+            {
+                if(rowNum <= 9)
+                {
+                    var id = "row" + rowNum;
+                    var tr = document.getElementById(id);
+                    var theRow  = "<th>New Row " + rowNum + "</th>";
+                    tr.insertCell(0).outerHTML = theRow;
+                    rowNum++;
+                }
+                else
+                {
+
+                    var table = document.getElementById(ToDoTable);
+                }
+
+            }
 
 
 
