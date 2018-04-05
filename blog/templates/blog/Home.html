@@ -210,7 +210,14 @@
                 else
                 {
 
-                    var table = document.getElementById(ToDoTable);
+                    var table = document.getElementById("ToDoTable");
+                    var row = table.insertRow(rowNum);
+                    var id = "row" + rowNum;
+                    row.id = id;
+                    var theRow  = "<th>New Row " + rowNum + "</th>";
+                    row.insertCell(0).outerHTML = theRow;
+                    rowNum++;
+
                 }
 
             }
